@@ -11,5 +11,5 @@ all types refer to the official documentation: https://msx.benzac.de/wiki/index.
 
 To start using `msx-go`, install Go and run `go get`:
 ```sh
-$ go get github/mount-grabber/msx-go@latest
+$ go get github.com/mountgrabber/msx-go@latest
 ```
