@@ -2,10 +2,10 @@ package api
 
 // Response https://msx.benzac.de/wiki/index.php?title=Responses
 type Response struct {
-	Status  int         `json:"status"`
-	Text    string      `json:"text,omitempty"`
-	Message interface{} `json:"message,omitempty"`
-	Data    interface{} `json:"data"`
+	Status  int    `json:"status"`
+	Text    string `json:"text,omitempty"`
+	Message string `json:"message,omitempty"`
+	Data    any    `json:"data"`
 }
 
 // Colors https://msx.benzac.de/wiki/index.php?title=Colors
