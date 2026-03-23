@@ -21,14 +21,14 @@ type ContentRootObject struct {
 	Background      string              `json:"background,omitempty"`
 	Extension       string              `json:"extension,omitempty"`
 	Dictionary      string              `json:"dictionary,omitempty"`
-	Template        ContentItemObject   `json:"template,omitempty"` // Only for templated items
+	Template        *ContentItemObject  `json:"template,omitempty"` // Only for templated items | nil type instead of empty object
 	Items           []ContentItemObject `json:"items,omitempty"`    // Only for templated items
 	Pages           []ContentPageObject `json:"pages,omitempty"`    // Only for non-templated items
-	Header          ContentPageObject   `json:"header,omitempty"`
-	Footer          ContentPageObject   `json:"footer,omitempty"`
+	Header          *ContentPageObject  `json:"header,omitempty"`   // nil type instead of empty object | nil type instead of empty object
+	Footer          *ContentPageObject  `json:"footer,omitempty"`   // nil type instead of empty object | nil type instead of empty object
 	Inserts         []ContentPageObject `json:"inserts,omitempty"`
-	Overlay         ContentPageObject   `json:"overlay,omitempty"`
-	Underlay        ContentPageObject   `json:"underlay,omitempty"`
+	Overlay         *ContentPageObject  `json:"overlay,omitempty"`  // nil type instead of empty object
+	Underlay        *ContentPageObject  `json:"underlay,omitempty"` // nil type instead of empty object
 	Action          string              `json:"action,omitempty"`
 	Data            any                 `json:"data,omitempty"`
 	Ready           any                 `json:"ready,omitempty"`
@@ -49,7 +49,7 @@ type ContentPageObject struct {
 	Area            string              `json:"area,omitempty"`
 	Offset          string              `json:"offset,omitempty"`
 	Position        string              `json:"position,omitempty"`
-	Template        ContentItemObject   `json:"template,omitempty"`
+	Template        *ContentItemObject  `json:"template,omitempty"` // nil type instead of empty object
 	Items           []ContentItemObject `json:"items"`
 	Action          string              `json:"action,omitempty"`
 	Data            any                 `json:"data,omitempty"`
@@ -117,7 +117,7 @@ type ContentItemObject struct {
 	Action            string             `json:"action,omitempty"` // String or struct
 	Data              any                `json:"data,omitempty"`
 	Properties        ExtendedProperties `json:"properties,omitempty"`
-	Live              LiveObject         `json:"live,omitempty"`
-	Selection         SelectionObject    `json:"selection,omitempty"`
+	Live              *LiveObject        `json:"live,omitempty"`      // nil type instead of empty object
+	Selection         *SelectionObject   `json:"selection,omitempty"` // nil type instead of empty object
 	Options           map[string]string  `json:"options,omitempty"`
 }
